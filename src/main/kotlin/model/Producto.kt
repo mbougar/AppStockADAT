@@ -7,7 +7,7 @@ import java.util.Date
 
 @Entity
 @Table(name = "productos")
-data class Producto(
+class Producto(
 
     @Column(nullable = false)
     val categoria: String,
@@ -41,4 +41,8 @@ data class Producto(
 
     val precioConIva: Float
         get() = precioSinIva * 1.21f
+
+    override fun toString(): String {
+        return "[$nombre] Precio con IVA: %.2f, Categoría: $categoria Stock: $stock, Id: $id, Fecha Alta: $fechaAlta".format(precioConIva)
+    }
 }

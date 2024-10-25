@@ -79,6 +79,7 @@ class ProductoService(val repository: ProductoRepository, private val repository
 
     fun obtenerProductosConStock() {
         val productos = repository.readProductoConStock()
+        println(productos.size)
         if (productos.isEmpty()) {
             console.mostrarMensaje("No hay productos con stock.", true)
         } else {

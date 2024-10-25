@@ -7,7 +7,7 @@ import jakarta.persistence.Table
 
 @Entity
 @Table(name = "usuarios")
-data class Usuario(
+class Usuario(
 
     @Id
     @Column(name = "nombre_usuario")

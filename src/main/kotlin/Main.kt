@@ -1,6 +1,5 @@
 package com.mbougar
 
-import com.mbougar.model.Producto
 import com.mbougar.model.Proveedor
 import com.mbougar.output.Console
 import com.mbougar.repository.EntityManagerFactoryProvider

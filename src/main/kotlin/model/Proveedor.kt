@@ -5,7 +5,7 @@ import jakarta.persistence.*
 // Por si acaso @Suppress("JpaObjectClassSignatureInspection")
 @Entity
 @Table(name = "proveedores")
-data class Proveedor(
+class Proveedor(
 
     @Column(nullable = false)
     val nombre: String,
@@ -27,5 +27,9 @@ data class Proveedor(
 
     fun removeProducto(producto: Producto) {
         productos.remove(producto)
+    }
+
+    override fun toString(): String {
+        return "[$nombre] Dirección: $direccion, Id: $id"
     }
 }
