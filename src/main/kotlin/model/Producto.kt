@@ -24,6 +24,8 @@ class Producto(
     @Column(nullable = false)
     var stock: Int,
 
+    // Con cascade Merge cualquier cambio sobre el producto actualizara tambien los productos en la lista de productos
+    //de proveedor y hara persist.
     @ManyToOne(cascade = [CascadeType.MERGE, CascadeType.PERSIST])
     @JoinColumn(name = "proveedor_id", nullable = false)
     var proveedor: Proveedor?,

@@ -13,6 +13,8 @@ class Proveedor(
     @Column(nullable = false)
     val direccion: String,
 
+    // Con cascade = [CascadeType.ALL] las operaciones sobre Proveedor hacen cascade a sus Producto relacionados.
+    // orphan removal eliminara automaticamente cualquier producto eliminado de la lista de productos
     @OneToMany(mappedBy = "proveedor", cascade = [CascadeType.ALL], orphanRemoval = true, fetch = FetchType.EAGER)
     val productos: MutableList<Producto> = mutableListOf(),
 
@@ -30,6 +32,6 @@ class Proveedor(
     }
 
     override fun toString(): String {
-        return "[$nombre] Dirección: $direccion, Id: $id"
+        return "[$nombre] Dirección: $direccion, Id: $id, Productos: $productos"
     }
 }
